@@ -14,11 +14,14 @@ self.addEventListener('install', function(event) {
       // And add resources to it
       return cache.addAll([
         //TODO: add the files that needs to be cached
+          "index.html",
+          "style.css"
       ]);
     })
   );
 });
 
 //TODO: create the EventListener for 'fetch'.
-//it should check if the url exists in the cache, if so get the response from the cache, otherwise get it
+
+
 

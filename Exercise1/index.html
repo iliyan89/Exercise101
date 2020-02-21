@@ -11,11 +11,21 @@
     <p>And now, a picture of a cute kitten:</p>
     <img src="https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?cs=srgb&dl=adorable-animal-cat-320014.jpg&fm=jpg" alt="Kitten" height="300">
     <p>And now, some content added via JavaScript:</p>
+
     <script src="script.js"></script>
     <script>
-      //TODO: Here you should register your serviceworker!
+      //TODO Here we register a serviceworker! - DONE
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("sw.js")
+                .then(function(registration) {
+                  console.log("Service Worker registered with scope:", registration.scope);
+                }).catch(function(err) {
+          console.log("Service worker registration failed:", err);
+        });
+      }
       console.log("ServiceWorker registered sw.js");
     </script>
+
     <script src="logging.js"></script>
   </body>
 </html>
